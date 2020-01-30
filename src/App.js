@@ -9,13 +9,16 @@ function App() {
   
   // Crear un listado de productos
   //Destructuring
-  //Usualmente el primero es el contenido de valores y el segundo una funcion que reescriba el state
+  //Usualmente el primero es la referencia al valor del state y el segundo una funcion que reescriba  o modifique el state
   const [productos, guardarProductos] = useState([
     { id: 1, nombre: 'Camisa ReactJS', precio: 50 },
     { id: 2, nombre: 'Camisa VueJS', precio: 40 },
     { id: 3, nombre: 'Camisa Node.js', precio: 30 },
     { id: 4, nombre: 'Camisa Angular', precio: 20 },
   ]);
+
+  //State para un carrito de compras
+  const [carrito, agregarProducto] = useState([]);
 
   const fecha = new Date().getFullYear();
   // en el productos.map es un return pero se omite por que es no hay codigo previo y los parentesis da
@@ -33,6 +36,9 @@ function App() {
         <Producto 
           key={producto.id}
           producto = {producto}
+          productos = {productos}
+          carrito = {carrito}
+          agregarProducto= {agregarProducto}
         />
       ))}
 
