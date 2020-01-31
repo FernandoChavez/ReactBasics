@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Producto from './components/Producto';
+import Carrito from './components/Carrito';
 
 function App() {
   //return solo  puede retornar un solo valor, a menos que pongas varios valores en un contenedor como un div
@@ -41,6 +42,10 @@ function App() {
           agregarProducto= {agregarProducto}
         />
       ))}
+      <Carrito
+        carrito={carrito}
+        agregarProducto={agregarProducto}
+      />
 
       <Footer 
         fecha = {fecha}
